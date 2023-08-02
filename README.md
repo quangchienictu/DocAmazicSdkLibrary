@@ -13,6 +13,7 @@
  dependencies {
     implementation 'com.github.quangchienictu:AmazicAdsLibrary:2.2.0'
     implementation 'com.google.android.gms:play-services-ads:22.1.0'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
     //multidex
     implementation "androidx.multidex:multidex:2.0.1"
   }
@@ -141,6 +142,43 @@
                     }
                 });
 </pre>
+
+
+<h2>- Open splash</h2>
+<div class="content">
+<pre>
+  -- oncreate --
+   AdCallback adCallback;
+   adCallback = new AdCallback(){
+            @Override
+            public void onNextAction() {
+                super.onNextAction();
+                //start activity
+            }
+        };
+   AppOpenManager.getInstance().loadOpenAppAdSplash(this,"ca-app-pub-3940256099942544/3419835294",3000,10000,true,adCallback);
+  ---- onresume -----
+  AppOpenManager.getInstance().onCheckShowSplashWhenFail(this,adCallback,1000);
+</pre>
+<h4>Show RewardAds</h4>
+<pre>
+  Admob.getInstance().showRewardAds(MainActivity.this,new RewardCallback(){
+                    @Override
+                    public void onEarnedReward(RewardItem rewardItem) {
+                        // code here
+                    }
+
+                    @Override
+                    public void onAdClosed() {
+                        // code here
+                    }
+
+                    @Override
+                    public void onAdFailedToShow(int codeError) {
+                       // code here
+                    }
+                });
+</pre>
 </div>
 
 <h2>- NativeAds</h2>
@@ -148,12 +186,13 @@
   <h4>View xml</h4>
 <pre>
   
-    < FrameLayout
+    <FrameLayout
         android:id="@+id/native_ads"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+        <include layout="@layout/ads_native_shimer" />
   
 </pre>
 <h4>Create and show nativeAds</h4>
