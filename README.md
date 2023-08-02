@@ -201,7 +201,9 @@
      private FrameLayout native_ads;
      
      native_ads = findViewById(R.id.native_ads);
-     
+
+
+     <i>Option 1</i> 
       Admob.getInstance().loadNativeAd(this, "native_id", new NativeCallback() {
             @Override
             public void onNativeAdLoaded(NativeAd nativeAd) {
@@ -214,6 +216,10 @@
                 public void onAdFailedToLoad() {
                     fr_ads1.removeAllViews();
                 }
+
+
+     <i>Option 2</i> 
+        Admob.getInstance().loadNativeAd(this, "id native", native_ads,R.layout.ads_native);
 </pre>
 
 </div>
