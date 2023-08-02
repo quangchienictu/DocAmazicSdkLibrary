@@ -1,6 +1,5 @@
 <h1>DocAmazicSdkLibrary</h1>
 <h3><li>Adding the library to your project: Add the following in your root build.gradle at the end of repositories:</br></h3>
-
 <pre>
   allprojects {
     repositories {
@@ -12,7 +11,7 @@
 <h5>Implement library in your app level build.gradle:</h5>
 <pre>
  dependencies {
-    implementation 'com.github.quangchienictu:AmazicAdsLibrary:2.0.5'
+    implementation 'com.github.quangchienictu:AmazicAdsLibrary:2.2.0'
     implementation 'com.google.android.gms:play-services-ads:22.1.0'
     //multidex
     implementation "androidx.multidex:multidex:2.0.1"
