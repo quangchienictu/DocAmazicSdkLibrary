@@ -203,7 +203,7 @@
      native_ads = findViewById(R.id.native_ads);
 
 
-     <i>Option 1</i> 
+     =========== OPTION 1 ===========
       Admob.getInstance().loadNativeAd(this, "native_id", new NativeCallback() {
             @Override
             public void onNativeAdLoaded(NativeAd nativeAd) {
@@ -218,8 +218,8 @@
                 }
 
 
-     <i>Option 2</i> 
-        Admob.getInstance().loadNativeAd(this, "id native", native_ads,R.layout.ads_native);
+     =========== OPTION 2 ==========
+      Admob.getInstance().loadNativeAd(this, "id native", native_ads,R.layout.ads_native);
 </pre>
 
 </div>
