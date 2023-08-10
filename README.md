@@ -230,3 +230,30 @@
  true - show all ads
  false - hide all ads
 </pre>
+<h4>Call API</h4>
+<pre>
+Để link server null nếu chưa biết link server build 
+<pre>
+AdmobApi.getInstance().init(getString(R.string.linkServer),getString(R.string.appID),new ApiCallBack(){
+            @Override
+            public void onReady() {
+                super.onReady();
+                AppOpenManager.getInstance().loadOpenAppAdSplashFloor(Splash.this, AdmobApi.getInstance().getListIDOpenSplash(),true,adCallback);
+            }
+        });
+
+
+ ==================== thông tin các list trả về  =====================================
+getListIDNativeLanguage() : list ID language
+getListIDNativeIntro() : list ID Intro
+getListIDNativePersimmon() : list ID Permission
+getListIDNativeAll() : list ID Native All 
+getListIDInterAll() : list ID Inter All
+getListIDBannerAll() : list ID banner All
+getListIDCollapseBannerAll() : list ID Banner callap
+getListIDInterIntro(): list ID Inter Intro
+
+Trong trường hợp ko có list nào trong các list trên thì tạo list custom , vd : native_home
+AdmobApi.getInstance().setListIDOther("native_home"); // trước khi init()
+Khi nào cần lấy thì gọi getListIDOther()
+</pre>
