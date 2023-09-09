@@ -197,7 +197,7 @@ mInterstitialAd = interstitialAd;
 </pre>
 <h4>Create and show nativeAds</h4>
 <pre>
-
+ 
      private FrameLayout native_ads;
      
      native_ads = findViewById(R.id.native_ads);
